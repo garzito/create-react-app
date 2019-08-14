@@ -1,0 +1,9 @@
+[
+  {"path": "GettingStarted/StepOne.js", "type": "file"},
+  {"path": "GettingStarted/StepTwo.js", "type": "file"},
+  {"path": "GettingStarted/StepThree.js", "type": "file"},
+  {"path": "GettingStarted/SimplePage.js", "type": "file"},
+  {"path": "GettingStarted/SimpleDropdown.js", "type": "file"},
+  {"path": "GettingStarted/TreeAndEditor.js", "type": "file"},
+  {"path": "GettingStarted", "type": "dir"}
+]

@@ -1,0 +1,105 @@
+.homePage {
+  background-color: #ffffff;
+  margin-bottom: 55px;
+}
+.circle {
+  display: inline-block;
+  width: 76px;
+  height: 76px;
+  text-align: center;
+  border-radius: 50%;
+  background: #E2E2E2;
+  font-size: 30px;
+  line-height: 64px;
+}
+.featureHeading {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.container1, .container3 {
+  display: flex;
+}
+
+.container1 > div {
+  text-align: center;
+  flex: 3;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.container3 > div {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.containerHeader {
+  margin-bottom: 4px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 340px;
+  background: url(/images/banner-image2.jpg)  no-repeat 0 0;
+  background-size: cover;
+}
+
+.homePage h1,
+.homePage h3 {
+  color: #f2f2f2;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.homePage h1 {
+  font-size: 36px;
+}
+
+.lineHr {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 64px;
+  width: 64px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+.polymer {
+  background: url(/images/logo-polymer.png)  no-repeat 0 0;
+}
+
+.webcomponents {
+  margin-left: 13px;
+  background: url(/images/logo-webcomponent.png)  no-repeat 0 0;
+}
+
+.showcase {
+  background: url(/images/icon-showcase.png)  no-repeat 0 0;
+}
+
+.dfwAnchor {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.paraText {
+  text-align: left;
+  font-size: 1em;
+  color: #434a54;
+  margin-top: 0;
+}
+
+.homePage ul {
+  text-align: left;
+}

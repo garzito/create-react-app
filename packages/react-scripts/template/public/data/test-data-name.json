@@ -1,0 +1,53 @@
+[
+
+  {
+    "id" : "20",
+    "name" : "Nashville, TN",
+    "area": "South"
+  },
+  {
+    "id" : "30",
+    "name" : "Ft. Lauderdale, FL",
+    "area": "South"
+  },
+  {
+    "id" : "40",
+    "name" : "Kansas City, KS",
+    "area": "Midwest"
+  },
+  {
+    "id" : "50",
+    "name": "Boston, MA",
+    "area": "East Coast"
+  },
+  {
+    "id" : "60",
+    "name": "Irvine, CA",
+    "area": "West Coast"
+  },
+  {
+    "id" : "70",
+    "name": "Redondo Beach, CA",
+    "area": "West Coast"
+  },
+  {
+    "id" : "10",
+    "name" : "Peoria, IL",
+    "area": "Midwest"
+  },
+  {
+    "id" : "6",
+    "name": "Los Angeles, CA",
+    "area": "West Coast"
+  },
+  {
+    "id" : "7",
+    "name": "Manhattan Beach, CA",
+    "area": "West Coast"
+  },
+  {
+    "id" : "1",
+    "name" : "Chicago, IL",
+    "area": "Midwest"
+  }
+]

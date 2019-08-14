@@ -109,6 +109,18 @@ module.exports = function(
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
 
+  const templatePath = template
+    ? path.resolve(originalDirectory, template)
+    : path.join(ownPath, useTypeScript ? 'template-typescript' : 'template');
+  const templatePackage = require(path.join(templatePath, 'package.json'));
+
+  // Adding template dependencies
+  appPackage.dependencies = Object.assign(
+    {},
+    appPackage.dependencies,
+    templatePackage.dependencies
+  );
+
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL
@@ -123,9 +135,6 @@ module.exports = function(
   }
 
   // Copy the files for the user
-  const templatePath = template
-    ? path.resolve(originalDirectory, template)
-    : path.join(ownPath, useTypeScript ? 'template-typescript' : 'template');
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, appPath);
   } else {

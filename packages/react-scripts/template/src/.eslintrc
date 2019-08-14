@@ -1,0 +1,8 @@
+{
+  "globals": {
+    "dfwPlatformUIAppConfig": true,
+    "document": true,
+    "window": true,
+    "CustomEvent": true
+  }
+}

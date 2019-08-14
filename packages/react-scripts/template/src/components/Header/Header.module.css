@@ -1,0 +1,76 @@
+.header {
+  background-color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f2f2f2;
+  font-size: 14px;
+  padding: 0.75rem 1.2rem;
+}
+
+.logo {
+  display: block;
+  background: url(/images/att-logo.png) no-repeat;
+  width: 49px;
+  height: 36px;
+}
+
+.headerAnchor {
+  cursor: pointer;
+}
+
+.userTools,
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.iconsWrapper > svg {
+  width: 1.3rem;
+  margin: 0 0.2rem;
+}
+
+.iconsWrapper > svg:not(:nth-child(1)) {
+  cursor: pointer;
+}
+
+.iconsWrapper > svg:not(:nth-child(1)):hover {
+  fill: #99c2df;
+}
+
+.projectName {
+  font-size: 16px !important;
+  margin-left: 10px;
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.welcomeName {
+  font-weight: bold;
+  display: block;
+  margin-right:10px;
+}
+
+.welcomeTitle {
+  display: block;
+  margin-right: 5px;
+}
+
+.changelogBody {
+  margin: 20px;
+  height: 500px;
+  overflow: auto;
+}
+
+.changelogButtons {
+  text-align: right;
+  margin: 20px 0;
+}
+
+.changelogHeader {
+  padding: 10px;
+  background-color: #eaeaea;
+  text-align: center;
+  margin-top: -24px;
+}

@@ -1,0 +1,8 @@
+.notificationsDialog {
+  padding: 1rem;
+  text-align: center;
+  background: #000;
+}
+.notificationsDialog span {
+  font-size: 5rem;
+}
