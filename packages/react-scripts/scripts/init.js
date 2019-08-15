@@ -109,18 +109,6 @@ module.exports = function(
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
 
-  const templatePath = template
-    ? path.resolve(originalDirectory, template)
-    : path.join(ownPath, useTypeScript ? 'template-typescript' : 'template');
-  const templatePackage = require(path.join(templatePath, 'package.json'));
-
-  // Adding template dependencies
-  appPackage.dependencies = Object.assign(
-    {},
-    appPackage.dependencies,
-    templatePackage.dependencies
-  );
-
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL
@@ -135,6 +123,9 @@ module.exports = function(
   }
 
   // Copy the files for the user
+  const templatePath = template
+    ? path.resolve(originalDirectory, template)
+    : path.join(ownPath, useTypeScript ? 'template-typescript' : 'template');
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, appPath);
   } else {
@@ -173,7 +164,22 @@ module.exports = function(
     command = 'npm';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
-  args.push('react', 'react-dom');
+
+  // Add template dependencies
+  console.log('Adding template dependencies');
+  args.push('@material-ui/core@^4.3.1');
+  args.push('@material-ui/icons@^4.2.1');
+  args.push('codemirror@^5.48.2');
+  args.push('lodash@^4.17.15');
+  args.push('react@^16.8.6');
+  args.push('react-codemirror2@^6.0.0');
+  args.push('react-dom@^16.8.6');
+  args.push('react-redux@^7.1.0');
+  args.push('react-router-dom@^5.0.1');
+  args.push('react-treebeard@^3.2.4');
+  args.push('redux@^4.0.4');
+  args.push('redux-thunk@^2.3.0');
+  console.log(command, args);
 
   // Install additional template dependencies, if present
   const templateDependenciesPath = path.join(
@@ -196,12 +202,21 @@ module.exports = function(
   if (!isReactInstalled(appPackage) || template) {
     console.log(`Installing react and react-dom using ${command}...`);
     console.log();
-
+    args.push('react', 'react-dom');
     const proc = spawn.sync(command, args, { stdio: 'inherit' });
     if (proc.status !== 0) {
       console.error(`\`${command} ${args.join(' ')}\` failed`);
       return;
     }
+  }
+
+  // Install template dependencies
+  // if (!isReactInstalled(appPackage) || template) {
+  console.log(`Installing template dependencies using ${command}...`);
+  const proc = spawn.sync(command, args, { stdio: 'inherit' });
+  if (proc.status !== 0) {
+    console.error(`\`${command} ${args.join(' ')}\` failed`);
+    return;
   }
 
   if (useTypeScript) {

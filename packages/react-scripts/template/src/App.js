@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 /* UI Modules */
+import ConfigurationLoader from './components/ConfigurationLoader/ConfigurationLoader';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
@@ -35,6 +36,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <MuiThemeProvider theme={theme}>
+          <ConfigurationLoader />
           <CssBaseline />
           <header className={classes.header}>
             <Header />

@@ -99,7 +99,7 @@ const calculateSessionTimeLeft = timeLeft => {
 };
 
 const fetchSessionTimeLeft = async props => {
-  props.setAuditPoint(2, 'Requestion session time left');
+  props.setAuditPoint(2, 'Requesting session time left');
   props.setAuditFinal('All done with login');
   props.saveAuditData();
   try {
@@ -150,15 +150,18 @@ export const setInitialValues = props => {
 };
 
 export class Login extends React.Component {
-  componentDidMount() {
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevProps.config.sso && this.props.config.sso) {
+      this.startSessionValidation();
+    }
+    
+  }
+
+  startSessionValidation = () => {
     if (!this.props.config) {
       return console.error("ERROR dfw-login dfwPlatformUIAppConfig not found!");
     }
-    // if (!this.props.config.ssohasOwnProperty('components')) {
-    //   document.addEventListener('ovp-config-read', setInitialValues, true);
-    // } else {
-      setInitialValues(this.props);
-    // }
+    setInitialValues(this.props);
     if (!window.localStorage.getItem('uid')) {
       this.props.setUserInfo({ uid: ['unknown'], 'userName': 'Unknown' });
       validateSession(this.props);
@@ -176,7 +179,7 @@ export class Login extends React.Component {
       };
     }
     validateSession(this.props);
-  }
+  };
 
   render() {
     const handleLogin = e => login(this.props);
